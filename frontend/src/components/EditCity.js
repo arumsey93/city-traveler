@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { CITIES_QUERY } from './Recipes';
-import CityBuilder from './RecipeBuilder';
-import uuid from 'uuid';
+import { CITIES_QUERY } from './City';
+import CityBuilder from './CityBuilder';
 
 const UPDATE_CITY = gql`
     mutation UpdateCity($id: String! $name: String! $description: String!) {
@@ -42,7 +41,7 @@ const UpdateCity = (props) => {
         );
     }
     else return (
-        <RecipeBuilder 
+        <CityBuilder 
             city={updateCity}
             setCity={setUpdateCity}
             handleSubmit={submitCityUpdate}
