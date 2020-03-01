@@ -18,12 +18,12 @@ const CityBuilder = (props) => {
             <div className="col-md-8">
                 <form className="mb-4" onSubmit={props.handleSubmit}>
                     <div className="form-group">
-                        <label for="title">What city did you go to?</label>
+                        <label for="name">What city did you go to?</label>
                         <input 
                             type="text" 
-                            name="title" 
-                            value={props.city.title} 
-                            onChange={e => props.setCity({...props.city, title: e.target.value})} 
+                            name="name" 
+                            value={props.city.name} 
+                            onChange={e => props.setCity({...props.city, name: e.target.value})} 
                             className="form-control" />
                     </div>
 
@@ -47,7 +47,7 @@ const CityBuilder = (props) => {
                 </form>
             </div>
             <div className="col-md-4">
-                <p><strong>City: </strong>{props.city.title}</p>
+                <p><strong>City: </strong>{props.city.name}</p>
                 <p><strong>Description: </strong></p>
                 <ul>
                     {props.city.description !== undefined ? props.city.description.map(i => 
